@@ -22,3 +22,4 @@
 
 .byebug_history
 cache/saml/metadata
+config/saml_secrets.yml

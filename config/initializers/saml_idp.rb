@@ -13,19 +13,19 @@ SamlIdp.configure do |config|
   config.attribute_service_location = "#{base}/saml/attributes"
   config.single_service_post_location = "#{base}/saml/auth"
 
-  config.name_id.formats =
-  {    
-       uid: -> (principal) {principal.uid },
-       transient: -> (principal) { principal.id },
-       persistent: -> (p) { p.id },
-  }
+  #config.name_id.formats =
+  #{    
+  #     uid: -> (principal) {principal.uid },
+  #     transient: -> (principal) { principal.id },
+  #     persistent: -> (p) { p.id },
+  #}
 
   #> OpenSSL::Digest::SHA1.new(cert.to_der).to_s.scan(/../).join(':').upcase
   #$ openssl x509 -in test2.crt -noout -sha256 -fingerprint
   service_providers = {
     "http://localhost:3001" => {
       #fingerprint: "4C:CD:3B:0B:26:48:A9:91:A8:6A:8E:D7:90:A8:3A:47:0F:0E:C4:80", #daisy
-      fingerprint: "4C:56:82:76:C3:8A:2E:43:EA:2C:5A:C9:FD:5D:DA:DC:79:9E:1C:55",
+      fingerprint: "4C:56:82:76:C3:8A:2E:43:EA:2C:5A:C9:FD:5D:DA:DC:79:9E:1C:55", #safetycentral
       metadata_url: "http://localhost:3001/users/saml/metadata"
     },
   }

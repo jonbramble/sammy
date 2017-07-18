@@ -17,5 +17,21 @@ namespace :metadata do
       Marshal.dump settings.to_h, f
     end
   end
-
+  task keys: :environment do
+   opts = {
+    common_name: "sammy.idp", 
+    country: "CA",                	
+    state: "BC",            		
+    org: "PharmSci",                 	
+    org_unit: "BioPhysics",             
+    email: "webmaster@galenus.pharmsci.ubc.ca",
+    expire_in_days: 5*365
+   }
+	ssl = Fauthentic.generate(opts)		#generate the keys
+	cert_string = ssl.cert.to_pem
+	key_string = ssl.key.to_s
+        secrets = { 'shared' => {'cert' => cert_string, 'private_key' => key_string}}
+   	File.open(Rails.root.join('config/saml_secrets.yml'), "w"){|f| f.write secrets.to_yaml}
+	
+  end
 end

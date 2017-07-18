@@ -1,6 +1,10 @@
 class User < ApplicationRecord
  has_secure_password
 
+ def persistent 
+  id
+ end
+
  def asserted_attributes
        {
          uid: { 
