@@ -36,14 +36,13 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'saml_idp', github: 'jonbramble/saml_idp'
 gem 'materialize-sass'
 gem 'jquery-rails'
-
+gem 'xmlenc'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'awesome_print'
   gem 'fauthentic'
-  gem 'xmlenc'
 end
 
 group :development do
