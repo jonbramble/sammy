@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+source /home/git/staging/rails/sammy_envars
+
+if
+  [[ -s "/home/git/.rvm/gems/ruby-2.4.0/environment" ]]
+then
+  source "/home/git/.rvm/gems/ruby-2.4.0/environment"
+  exec puma "$@"
+else
+  echo "ERROR: Missing RVM environment file: '/home/git/.rvm/gems/ruby-2.4.0/environment'" >&2
+  exit 1
+fi
+

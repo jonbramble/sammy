@@ -1,0 +1,33 @@
+<div class="row">
+ <h4>Sign In</h4>
+</div>
+
+<div class="row">
+<% if @saml_idp_fail_msg %>
+  <div id="saml_idp_fail_msg" class="flash error"><%= @saml_idp_fail_msg %></div>
+<% end %>
+
+<%= form_tag do %>
+  <%= hidden_field_tag("SAMLRequest", params[:SAMLRequest]) %>
+  <%= hidden_field_tag("RelayState", params[:RelayState]) %>
+
+  <div class="row">
+   <div class="col s6">
+    <%= label_tag :email %>
+    <%= email_field_tag :email, params[:email], :autocapitalize => "off", :autocorrect => "off", :autofocus => "autofocus", :spellcheck => "false", :size => 30, :class => "email_pwd txt" %>
+  </div>
+  </div>
+
+  <div class="row">
+   <div class="col s6">
+    <%= label_tag :password %>
+    <%= password_field_tag :password, params[:password], :autocapitalize => "off", :autocorrect => "off", :spellcheck => "false", :size => 30, :class => "email_pwd txt" %>
+   </div>
+  </div>
+
+  <div class="row">
+    <%= submit_tag "Sign in", :class => "btn" %>
+  </div>
+<% end %>
+</div>
+

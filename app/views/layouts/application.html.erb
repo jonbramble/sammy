@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sammy</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+   <header class="navbar-fixed">
+ <nav class="deep-purple darken-1">
+      <div class="nav-wrapper">
+      <a href="#" class="brand-logo">SAML IDP</a>
+
+    </div>
+ </nav>
+</header>
+   <div class="container">
+    <%= yield %>
+   </div>
+  </body>
+</html>
