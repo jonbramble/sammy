@@ -1,8 +1,8 @@
 class SamlIdpController < SamlIdp::IdpController
   layout 'application'
 
-  def idp_authenticate(email, password)
-    user = User.find_by(email: email).try(:authenticate, password)
+  def idp_authenticate(uid, password)
+    user = User.find_by(uid: uid).try(:authenticate, password)
   end
   private :idp_authenticate
 
