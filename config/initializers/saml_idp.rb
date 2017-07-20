@@ -13,12 +13,12 @@ SamlIdp.configure do |config|
   config.attribute_service_location = "#{base}/saml/attributes"
   config.single_service_post_location = "#{base}/saml/auth"
 
-  #config.name_id.formats =
-  #{    
-  #     uid: -> (principal) {principal.uid },
-  #     transient: -> (principal) { principal.id },
-  #     persistent: -> (p) { p.id },
-  #}
+  config.name_id.formats =
+  {    
+       uid: -> (principal) {principal.uid },
+       transient: -> (principal) { principal.id },
+       persistent: -> (p) { p.id },
+  }
 
   #> OpenSSL::Digest::SHA1.new(cert.to_der).to_s.scan(/../).join(':').upcase
   #$ openssl x509 -in test2.crt -noout -sha256 -fingerprint

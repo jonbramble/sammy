@@ -3,6 +3,7 @@ class SamlIdpController < SamlIdp::IdpController
 
   def idp_authenticate(uid, password)
     user = User.find_by(uid: uid).try(:authenticate, password)
+    user ? user: nil
   end
   private :idp_authenticate
 

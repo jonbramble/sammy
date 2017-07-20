@@ -14,14 +14,14 @@
   <div class="row">
    <div class="col s6">
     <%= label_tag :uid %>
-    <%= text_field_tag :email, params[:uid], :autocapitalize => "off", :autocorrect => "off", :autofocus => "autofocus", :spellcheck => "false", :size => 30, :class => "email_pwd txt" %>
+    <%= text_field_tag :email, params[:uid], :autocapitalize => "off", :autocorrect => "off", :autofocus => "autofocus", :spellcheck => "false", :size => 30, :class => "email_pwd txt", :id => 'user_uid' %>
   </div>
   </div>
 
   <div class="row">
    <div class="col s6">
     <%= label_tag :password %>
-    <%= password_field_tag :password, params[:password], :autocapitalize => "off", :autocorrect => "off", :spellcheck => "false", :size => 30, :class => "email_pwd txt" %>
+    <%= password_field_tag :password, params[:password], :autocapitalize => "off", :autocorrect => "off", :spellcheck => "false", :size => 30, :class => "email_pwd txt", :id => 'user_password'  %>
    </div>
   </div>
 
